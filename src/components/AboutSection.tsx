@@ -52,7 +52,12 @@ export const AboutSection = () => {
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
-
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/jatin_resume.pdf';
+    link.download = 'jatin_resume.pdf';
+    link.click();
+  };
   return (
     <section id="about" className="py-24 md:py-32 bg-background">
       <div className="container px-4 md:px-6">
@@ -255,12 +260,14 @@ export const AboutSection = () => {
               className="text-center mt-20"
             >
               <p className="text-muted-foreground mb-6">Want to see more details?</p>
-              <a href="/jatin_resume.pdf" download className="btn-gold group">
+
+              <button className="btn-gold group" onClick={handleDownload}>
+
                 <span className="flex items-center gap-2 text-sm tracking-widest uppercase font-bold !text-white dark:text-black">
                   Download Full Resume
                   <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </span>
-              </a>
+              </button>
             </motion.div>
           </motion.div>
         </div>
