@@ -54,7 +54,7 @@ export const AboutSection = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="about" className="py-16 md:py-32 bg-background relative overflow-hidden">
+    <section id="about" className="py-24 md:py-32 bg-background">
       <div className="container px-4 md:px-6">
         {/* Section Header */}
         <motion.div
@@ -182,7 +182,7 @@ export const AboutSection = () => {
                         {/* Header */}
                         <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
                           <div className="flex-1 min-w-[200px]">
-                            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-2 group-hover:text-accent transition-colors">
+                            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2 group-hover:text-accent transition-colors">
                               {exp.role}
                             </h3>
                             <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
@@ -255,12 +255,12 @@ export const AboutSection = () => {
               className="text-center mt-20"
             >
               <p className="text-muted-foreground mb-6">Want to see more details?</p>
-              <button className="btn-gold group">
-                <span className="flex items-center gap-2 text-sm tracking-widest uppercase font-bold">
+              <a href="/jatin_resume.pdf" download className="btn-gold group">
+                <span className="flex items-center gap-2 text-sm tracking-widest uppercase font-bold !text-white dark:text-black">
                   Download Full Resume
                   <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </span>
-              </button>
+              </a>
             </motion.div>
           </motion.div>
         </div>
